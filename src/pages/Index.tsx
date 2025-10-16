@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ArrowRight, Globe, Smartphone, Settings, Package, Sparkles, FileText, Download, Shield, Lightbulb, Clock, Users, Mail, Linkedin, Twitter, Instagram, Send } from "lucide-react";
+import { ArrowRight, Globe, Smartphone, Settings, Package, Sparkles, FileText, Download, Shield, Lightbulb, Clock, Users, Mail, Linkedin, Twitter, Instagram, Send, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -446,10 +446,19 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    const subject = encodeURIComponent(`New Contact Form Submission from ${formData.name}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    );
+    
+    window.location.href = `mailto:workwizardsinnovations.official@gmail.com?subject=${subject}&body=${body}`;
+    
     toast({
-      title: "Message Sent!",
-      description: "We'll get back to you as soon as possible.",
+      title: "Opening Email Client",
+      description: "Your email client will open with the pre-filled message.",
     });
+    
     setFormData({ name: "", email: "", message: "" });
   };
 
@@ -571,13 +580,23 @@ const Contact = () => {
                   </a>
 
                   <a
-                    href="mailto:contact@workwizards.com"
+                    href="tel:+919618131779"
+                    className="flex items-center gap-3 p-3 rounded-lg hover:bg-white transition-colors group"
+                  >
+                    <div className="p-2 rounded-lg bg-gray-900 group-hover:bg-gray-800 transition-colors">
+                      <Phone className="h-5 w-5 text-white" />
+                    </div>
+                    <span className="font-medium text-gray-700">+91 9618131779</span>
+                  </a>
+
+                  <a
+                    href="mailto:workwizardsinnovations.official@gmail.com"
                     className="flex items-center gap-3 p-3 rounded-lg hover:bg-white transition-colors group"
                   >
                     <div className="p-2 rounded-lg bg-gray-900 group-hover:bg-gray-800 transition-colors">
                       <Mail className="h-5 w-5 text-white" />
                     </div>
-                    <span className="font-medium text-gray-700">contact@workwizards.com</span>
+                    <span className="font-medium text-gray-700 text-sm">workwizardsinnovations.official@gmail.com</span>
                   </a>
                 </div>
               </div>
