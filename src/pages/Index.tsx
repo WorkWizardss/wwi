@@ -5,7 +5,7 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-
+import { z } from "zod";
 const Index = () => {
   return (
     <div className="min-h-screen">
@@ -444,20 +444,33 @@ const Contact = () => {
     message: "",
   });
 
+  const contactSchema = z.object({
+    name: z.string().trim().nonempty({ message: "Name cannot be empty" }).max(100),
+    email: z.string().trim().email({ message: "Invalid email address" }).max(255),
+    message: z.string().trim().nonempty({ message: "Message cannot be empty" }).max(1000),
+  });
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
+    const parsed = contactSchema.safeParse(formData);
+    if (!parsed.success) {
+      const firstError = parsed.error.issues[0]?.message ?? "Please check the form and try again.";
+      toast({ title: "Invalid input", description: firstError, variant: "destructive" });
+      return;
+    }
+
     try {
-      const response = await fetch('https://formspree.io/f/xwpkwpvr', {
+      const response = await fetch('https://formsubmit.co/ajax/workwizardsinnovations.official@gmail.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json',
         },
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
           message: formData.message,
-          _replyto: formData.email,
           _subject: `New Contact from ${formData.name}`,
         }),
       });
