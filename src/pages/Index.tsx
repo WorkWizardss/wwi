@@ -9,21 +9,6 @@ import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
 import Header from "@/components/Header";
 
-const Index = () => {
-  return (
-    <div className="min-h-screen">
-      <Header />
-      <Hero />
-      <About />
-      <Services />
-      <WhyChooseUs />
-      <Careers />
-      <CTA />
-      <Contact />
-      <Footer />
-    </div>
-  );
-};
 
 // Hero Section
 const Hero = () => {
@@ -695,6 +680,22 @@ const Footer = () => {
         </div>
       </div>
     </footer>
+  );
+};
+
+const Index = () => {
+  return (
+    <div className="min-h-screen">
+      <Header />
+      <Hero />
+      <About />
+      <Services />
+      <WhyChooseUs />
+      <Careers />
+      <CTA />
+      <Contact />
+      <Footer />
+    </div>
   );
 };
 
