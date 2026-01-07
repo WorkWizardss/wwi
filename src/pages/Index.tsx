@@ -7,13 +7,17 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
+import Header from "@/components/Header";
+
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <Header />
       <Hero />
       <About />
       <Services />
       <WhyChooseUs />
+      <Careers />
       <CTA />
       <Contact />
       <Footer />
@@ -85,7 +89,7 @@ const Hero = () => {
 // About Section
 const About = () => {
   return (
-    <section className="py-24 bg-background">
+    <section id="about" className="py-24 bg-background pt-32">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
@@ -331,6 +335,82 @@ const CTA = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// Careers Section
+const Careers = () => {
+  return (
+    <section id="careers" className="py-24 bg-gradient-to-b from-background to-gray-50">
+      <div className="container mx-auto px-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+              Join Our Team
+            </h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-gray-300 via-gray-600 to-gray-300 mx-auto mb-8"></div>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Be part of the next generation of digital innovators
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 animate-fade-in">
+            <Card className="p-8 border-gray-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <div className="mb-4 inline-flex p-3 rounded-xl bg-gradient-to-br from-gray-100 to-gray-50">
+                <Sparkles className="h-6 w-6 text-gray-700" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-card-foreground">Why Work With Us?</h3>
+              <ul className="space-y-3 text-muted-foreground">
+                <li className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
+                  Work on cutting-edge technologies
+                </li>
+                <li className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
+                  Flexible remote work options
+                </li>
+                <li className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
+                  Continuous learning opportunities
+                </li>
+                <li className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
+                  Collaborative team environment
+                </li>
+              </ul>
+            </Card>
+
+            <Card className="p-8 border-gray-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <div className="mb-4 inline-flex p-3 rounded-xl bg-gradient-to-br from-gray-100 to-gray-50">
+                <Users className="h-6 w-6 text-gray-700" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-card-foreground">Open Positions</h3>
+              <p className="text-muted-foreground mb-4">
+                We're always looking for talented individuals to join our growing team.
+              </p>
+              <div className="space-y-3">
+                <div className="p-3 rounded-lg bg-gray-50 border border-gray-200">
+                  <p className="font-medium text-sm text-gray-800">Full Stack Developer</p>
+                  <p className="text-xs text-muted-foreground">Remote • Full Time</p>
+                </div>
+                <div className="p-3 rounded-lg bg-gray-50 border border-gray-200">
+                  <p className="font-medium text-sm text-gray-800">UI/UX Designer</p>
+                  <p className="text-xs text-muted-foreground">Remote • Full Time</p>
+                </div>
+              </div>
+              <Button 
+                variant="outline" 
+                className="mt-4 w-full"
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Apply Now
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Card>
           </div>
         </div>
       </div>
