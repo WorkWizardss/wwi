@@ -100,13 +100,14 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html, body {
+    @apply overflow-x-hidden;
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  }
-
-  html {
-    scroll-behavior: smooth;
   }
 }
 
