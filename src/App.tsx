@@ -3,15 +3,17 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { lazy, Suspense } from "react";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import WebServices from "./pages/WebServices";
-import AppDevelopment from "./pages/AppDevelopment";
-import MaintenanceSupport from "./pages/MaintenanceSupport";
-import Products from "./pages/Products";
-import Team from "./pages/Team";
-import CareersApply from "./pages/CareersApply";
-import CareersPage from "./pages/Careers";
+
+const WebServices = lazy(() => import("./pages/WebServices"));
+const AppDevelopment = lazy(() => import("./pages/AppDevelopment"));
+const MaintenanceSupport = lazy(() => import("./pages/MaintenanceSupport"));
+const Products = lazy(() => import("./pages/Products"));
+const Team = lazy(() => import("./pages/Team"));
+const CareersApply = lazy(() => import("./pages/CareersApply"));
+const CareersPage = lazy(() => import("./pages/Careers"));
 
 const queryClient = new QueryClient();
 
