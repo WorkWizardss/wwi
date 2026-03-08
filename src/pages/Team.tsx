@@ -53,6 +53,7 @@ const teamMembers = [
     description:
       "Prudhvi Duvvu oversees the financial planning and management of Work Wizards Innovations. As CFO, he is responsible for managing financial resources, budgeting, and ensuring sustainable financial growth. He plays an important role in maintaining financial stability while supporting the company's expansion and long-term business strategy.",
     initials: "PD",
+    image: prudhviImg,
   },
 ];
 
