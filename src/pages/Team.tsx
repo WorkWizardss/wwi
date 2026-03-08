@@ -45,6 +45,7 @@ const teamMembers = [
     description:
       "Charan Teja Rajanala is responsible for the marketing strategy and brand development of Work Wizards Innovations. As CMO, he focuses on promoting the company's products, expanding market reach, and building a strong brand presence. His work involves digital marketing strategies, partnership outreach, and ensuring that the company's innovations reach the right audience.",
     initials: "CR",
+    image: charanImg,
   },
   {
     name: "Prudhvi Duvvu",
