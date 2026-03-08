@@ -21,6 +21,7 @@ const teamMembers = [
     description:
       "Nalla Venkat is the founder of Work Wizards Innovations and the visionary behind the company's mission and long-term strategy. He leads the organization by defining its direction, identifying new opportunities, and driving innovation across all projects. Venkat focuses on building strong partnerships, guiding the development of new technologies, and ensuring that the company continuously evolves to meet future industry demands.",
     initials: "NV",
+    image: venkatImg,
   },
   {
     name: "Santhosh Boppudi",
@@ -28,6 +29,7 @@ const teamMembers = [
     description:
       "Santhosh Boppudi leads the technological development at Work Wizards Innovations. As CTO, he is responsible for designing the company's technical architecture, overseeing software development, and ensuring that the products are built using efficient and scalable technologies. He plays a key role in transforming ideas into functional digital platforms and maintaining the technological backbone of the organization.",
     initials: "SB",
+    image: santhoshImg,
   },
   {
     name: "Govinda Sai Ram Thammisetty",
