@@ -535,7 +535,7 @@ const Contact = () => {
             </form>
 
             <div className="space-y-8 animate-slide-up" style={{ animationDelay: "100ms" }}>
-              <div className="p-8 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200">
+              <div className="p-6 md:p-8 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200">
                 <h3 className="text-xl font-semibold mb-4 text-gray-900">Connect With Us</h3>
                 <p className="text-muted-foreground mb-6">
                   Follow us on social media to stay updated with our latest innovations and products.
@@ -595,7 +595,7 @@ const Contact = () => {
                     <div className="p-2 rounded-lg bg-gray-900 group-hover:bg-gray-800 transition-colors">
                       <Mail className="h-5 w-5 text-white" />
                     </div>
-                    <span className="font-medium text-gray-700 text-sm">workwizardsinnovations.official@gmail.com</span>
+                    <span className="font-medium text-gray-700 text-xs sm:text-sm break-all">workwizardsinnovations.official@gmail.com</span>
                   </a>
                 </div>
               </div>
