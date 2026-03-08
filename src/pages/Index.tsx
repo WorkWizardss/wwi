@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from "react"; // v2
 import { ArrowRight, Globe, Smartphone, Settings, Package, Shield, Sparkles, Lightbulb, Clock, Users, Mail, Linkedin, Twitter, Instagram, Send, Phone } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
