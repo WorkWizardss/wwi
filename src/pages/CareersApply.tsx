@@ -119,9 +119,40 @@ const CareersApply = () => {
 
   const handleBack = () => setCurrentStep((prev) => prev - 1);
 
-  const handleSubmit = () => {
-    setSubmitted(true);
-    toast({ title: "Application Submitted!", description: "We'll review your application and get back to you soon." });
+  const handleSubmit = async () => {
+    setIsSubmitting(true);
+    try {
+      await submitApplication({
+        position,
+        name: formData.name,
+        email: formData.email,
+        mobile: formData.mobile,
+        age: formData.age,
+        experience: formData.experience,
+        education: formData.education,
+        institute: formData.institute,
+        cgpa: formData.cgpa,
+        previousCompany: formData.previousCompany,
+        previousRole: formData.previousRole,
+        previousDuration: formData.previousDuration,
+        coverLetter: formData.coverLetter,
+        whyJoin: formData.whyJoin,
+        availability: formData.availability,
+        expectedSalary: formData.expectedSalary,
+        subscribe: formData.subscribe,
+        resumeFile: formData.resumeFile,
+      });
+      setSubmitted(true);
+      toast({ title: "Application Submitted!", description: "We'll review your application and get back to you soon." });
+    } catch (error) {
+      toast({
+        title: "Submission Failed",
+        description: error instanceof Error ? error.message : "Something went wrong. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (submitted) {
