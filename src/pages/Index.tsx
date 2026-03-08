@@ -95,6 +95,13 @@ const About = () => {
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Our expertise spans custom web development, mobile app creation, ongoing technical support, and launching our own branded digital platforms that solve real-world problems.
               </p>
+              <Button 
+                onClick={() => window.location.href = '/team'}
+                className="group mt-2"
+              >
+                Our Team
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </Button>
             </div>
 
             <div className="space-y-4 animate-slide-up">
