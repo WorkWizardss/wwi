@@ -695,9 +695,9 @@ const Index = () => {
     <div className="min-h-screen pb-20 md:pb-0">
       <Header />
       <Hero />
-      <About />
       <Services />
       <WhyChooseUs />
+      <About />
       <Careers />
       <CTA />
       <Contact />
