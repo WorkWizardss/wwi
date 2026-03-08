@@ -122,9 +122,9 @@ const Header = () => {
             {/* Logo */}
             <Link 
               to="/" 
-              className="text-lg font-bold bg-gradient-to-r from-primary to-purple-400 bg-clip-text text-transparent"
+              className="text-xl font-bold text-black"
             >
-              WorkWizards
+              Work Wizards <br />Innovations
             </Link>
 
             {/* More Dropdown for Mobile */}
