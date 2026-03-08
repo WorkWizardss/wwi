@@ -122,7 +122,7 @@ const Header = () => {
             {/* Logo */}
             <Link 
               to="/" 
-              className="text-xl font-bold text-black"
+              className="text-lg font-bold text-black whitespace-nowrap"
             >
               Work Wizards Innovations
             </Link>
