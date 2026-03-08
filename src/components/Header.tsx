@@ -34,6 +34,7 @@ const Header = () => {
   ];
 
   const moreLinks = [
+    { name: "Careers", path: "/careers" },
     { name: "Web Services", path: "/services/web" },
     { name: "App Development", path: "/services/app" },
     { name: "Maintenance & Support", path: "/services/maintenance" },
@@ -151,34 +152,6 @@ const Header = () => {
         </nav>
       </header>
 
-      {/* Mobile Bottom Navigation Bar */}
-      <nav className="fixed bottom-0 left-0 right-0 z-50 md:hidden">
-        <div className="backdrop-blur-xl bg-background/95 border-t border-white/20 shadow-[0_-4px_20px_rgba(0,0,0,0.1)]">
-          <div className="flex items-center justify-around py-2 px-1">
-            {mobileNavLinks.map((link) => {
-              const Icon = link.icon;
-              const active = isActive(link.path);
-              return (
-                <Link
-                  key={link.name}
-                  to={link.path}
-                  onClick={() => handleNavClick(link.path)}
-                  className={`flex flex-col items-center gap-0.5 px-3 py-1.5 rounded-xl transition-all duration-300 min-w-[60px] ${
-                    active
-                      ? "text-primary bg-primary/10"
-                      : "text-muted-foreground hover:text-foreground hover:bg-white/5"
-                  }`}
-                >
-                  <Icon className={`h-5 w-5 ${active ? "scale-110" : ""} transition-transform`} />
-                  <span className="text-[10px] font-medium">{link.name}</span>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-        {/* Safe area for bottom */}
-        <div className="h-safe-area-inset-bottom bg-background/95" />
-      </nav>
     </>
   );
 };
