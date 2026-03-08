@@ -124,7 +124,7 @@ const Header = () => {
               to="/" 
               className="text-xl font-bold text-black"
             >
-              Work Wizards <br />Innovations
+              Work Wizards Innovations
             </Link>
 
             {/* More Dropdown for Mobile */}
