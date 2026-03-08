@@ -1,4 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
+import wwiLogo from "@/assets/wwi-logo.svg";
 import { Home, Briefcase, Users, GraduationCap, Mail, ChevronDown } from "lucide-react";
 import {
   DropdownMenu,
@@ -61,8 +62,9 @@ const Header = () => {
             {/* Logo */}
             <Link 
               to="/" 
-              className="text-xl font-bold text-black"
+              className="flex items-center gap-2 text-xl font-bold text-foreground"
             >
+              <img src={wwiLogo} alt="WWI Logo" className="h-8 w-8" />
               Work Wizards Innovations
             </Link>
 
@@ -124,8 +126,9 @@ const Header = () => {
             {/* Logo */}
             <Link 
               to="/" 
-              className="text-sm font-bold text-black whitespace-nowrap"
+              className="flex items-center gap-2 text-sm font-bold text-foreground whitespace-nowrap"
             >
+              <img src={wwiLogo} alt="WWI Logo" className="h-6 w-6" />
               Work Wizards Innovations
             </Link>
 
