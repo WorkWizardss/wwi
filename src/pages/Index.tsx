@@ -57,6 +57,15 @@ const Hero = () => {
               Get In Touch
             </Button>
           </div>
+
+          <div className="mt-6 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary border border-border">
+            <span className="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+            <span className="text-sm font-medium text-muted-foreground">Next-Gen Digital Solutions</span>
+          </div>
+            >
+              Get In Touch
+            </Button>
+          </div>
         </div>
       </div>
 
