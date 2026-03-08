@@ -108,10 +108,12 @@ const Team = () => {
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <div className="flex-shrink-0">
-                    <div className="w-36 h-36 md:w-44 md:h-44 rounded-2xl bg-gradient-to-br from-primary/80 to-primary flex items-center justify-center shadow-lg">
-                      <span className="text-4xl md:text-5xl font-bold text-primary-foreground">
-                        {member.initials}
-                      </span>
+                    <div className="w-36 h-36 md:w-44 md:h-44 rounded-2xl overflow-hidden shadow-lg">
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-full h-full object-cover object-top"
+                      />
                     </div>
                   </div>
                   <div className={`flex-1 text-center md:text-left ${!isEven ? "md:text-right" : ""}`}>
