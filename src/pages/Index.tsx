@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { ArrowRight, Globe, Smartphone, Settings, Package, Shield, Sparkles, Lightbulb, Clock, Users, Mail, Linkedin, Twitter, Instagram, Send, Phone } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
