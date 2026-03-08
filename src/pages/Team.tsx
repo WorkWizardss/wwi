@@ -2,7 +2,11 @@ import { ArrowLeft, Linkedin, Mail, Calendar, Users, Rocket, Handshake } from "l
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
-
+import venkatImg from "@/assets/team-venkat.jpg";
+import santhoshImg from "@/assets/team-santhosh.jpeg";
+import govindImg from "@/assets/team-govind.jpeg";
+import charanImg from "@/assets/team-charan.jpeg";
+import prudhviImg from "@/assets/team-prudhvi.jpeg";
 const milestones = [
   { icon: Calendar, date: "Sep 2025", text: "Founded by a team of 5 passionate innovators" },
   { icon: Rocket, date: "Dec 2025", text: "First collaboration with Glowvai" },
@@ -17,6 +21,7 @@ const teamMembers = [
     description:
       "Nalla Venkat is the founder of Work Wizards Innovations and the visionary behind the company's mission and long-term strategy. He leads the organization by defining its direction, identifying new opportunities, and driving innovation across all projects. Venkat focuses on building strong partnerships, guiding the development of new technologies, and ensuring that the company continuously evolves to meet future industry demands.",
     initials: "NV",
+    image: venkatImg,
   },
   {
     name: "Santhosh Boppudi",
@@ -24,6 +29,7 @@ const teamMembers = [
     description:
       "Santhosh Boppudi leads the technological development at Work Wizards Innovations. As CTO, he is responsible for designing the company's technical architecture, overseeing software development, and ensuring that the products are built using efficient and scalable technologies. He plays a key role in transforming ideas into functional digital platforms and maintaining the technological backbone of the organization.",
     initials: "SB",
+    image: santhoshImg,
   },
   {
     name: "Govinda Sai Ram Thammisetty",
@@ -31,6 +37,7 @@ const teamMembers = [
     description:
       "Govinda Sai Ram Thammisetty manages the operational structure of the company. As COO, he ensures that projects are executed efficiently and that team coordination remains smooth across all activities. He focuses on operational planning, resource management, and maintaining the workflow required to deliver successful products and services.",
     initials: "GT",
+    image: govindImg,
   },
   {
     name: "Charan Teja Rajanala",
@@ -38,6 +45,7 @@ const teamMembers = [
     description:
       "Charan Teja Rajanala is responsible for the marketing strategy and brand development of Work Wizards Innovations. As CMO, he focuses on promoting the company's products, expanding market reach, and building a strong brand presence. His work involves digital marketing strategies, partnership outreach, and ensuring that the company's innovations reach the right audience.",
     initials: "CR",
+    image: charanImg,
   },
   {
     name: "Prudhvi Duvvu",
@@ -45,6 +53,7 @@ const teamMembers = [
     description:
       "Prudhvi Duvvu oversees the financial planning and management of Work Wizards Innovations. As CFO, he is responsible for managing financial resources, budgeting, and ensuring sustainable financial growth. He plays an important role in maintaining financial stability while supporting the company's expansion and long-term business strategy.",
     initials: "PD",
+    image: prudhviImg,
   },
 ];
 
@@ -99,10 +108,12 @@ const Team = () => {
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <div className="flex-shrink-0">
-                    <div className="w-36 h-36 md:w-44 md:h-44 rounded-2xl bg-gradient-to-br from-primary/80 to-primary flex items-center justify-center shadow-lg">
-                      <span className="text-4xl md:text-5xl font-bold text-primary-foreground">
-                        {member.initials}
-                      </span>
+                    <div className="w-36 h-36 md:w-44 md:h-44 rounded-2xl overflow-hidden shadow-lg">
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-full h-full object-cover object-top"
+                      />
                     </div>
                   </div>
                   <div className={`flex-1 text-center md:text-left ${!isEven ? "md:text-right" : ""}`}>
