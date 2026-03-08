@@ -37,6 +37,7 @@ const teamMembers = [
     description:
       "Govinda Sai Ram Thammisetty manages the operational structure of the company. As COO, he ensures that projects are executed efficiently and that team coordination remains smooth across all activities. He focuses on operational planning, resource management, and maintaining the workflow required to deliver successful products and services.",
     initials: "GT",
+    image: govindImg,
   },
   {
     name: "Charan Teja Rajanala",
