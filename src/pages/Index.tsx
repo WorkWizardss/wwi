@@ -1,4 +1,5 @@
 import { useState } from "react"; // v2
+import emailjs from "@emailjs/browser";
 import { ArrowRight, Globe, Smartphone, Settings, Package, Shield, Sparkles, Lightbulb, Clock, Users, Mail, Linkedin, Twitter, Instagram, Send, Phone } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -429,29 +430,22 @@ const Contact = () => {
     }
 
     try {
-      const response = await fetch('https://formsubmit.co/ajax/official@wwi.org.in', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-        },
-        body: JSON.stringify({
+      await emailjs.send(
+        "service_w4eaw3e",
+        "template_a1mnh9n",
+        {
           name: formData.name,
           email: formData.email,
           message: formData.message,
-          _subject: `New Contact from ${formData.name}`,
-        }),
-      });
+        },
+        "-c7DZgkRbTmCR1MTg"
+      );
 
-      if (response.ok) {
-        toast({
-          title: "Message Sent Successfully!",
-          description: "We'll get back to you as soon as possible.",
-        });
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        throw new Error('Failed to send message');
-      }
+      toast({
+        title: "Message Sent Successfully!",
+        description: "We'll get back to you as soon as possible.",
+      });
+      setFormData({ name: "", email: "", message: "" });
     } catch (error) {
       toast({
         title: "Error",
