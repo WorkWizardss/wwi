@@ -80,7 +80,58 @@ const Team = () => {
         </div>
       </section>
 
-      {/* Our Journey Section */}
+      {/* Team Members - Zigzag Layout (FIRST) */}
+      <section className="py-16">
+        <div className="container mx-auto px-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-14 text-foreground">
+            Meet the Leadership
+          </h2>
+
+          <div className="max-w-5xl mx-auto space-y-16">
+            {teamMembers.map((member, index) => {
+              const isEven = index % 2 === 0;
+              return (
+                <div
+                  key={member.name}
+                  className={`flex flex-col md:flex-row items-center gap-8 md:gap-12 animate-fade-in ${
+                    !isEven ? "md:flex-row-reverse" : ""
+                  }`}
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  <div className="flex-shrink-0">
+                    <div className="w-36 h-36 md:w-44 md:h-44 rounded-2xl bg-gradient-to-br from-primary/80 to-primary flex items-center justify-center shadow-lg">
+                      <span className="text-4xl md:text-5xl font-bold text-primary-foreground">
+                        {member.initials}
+                      </span>
+                    </div>
+                  </div>
+                  <div className={`flex-1 text-center md:text-left ${!isEven ? "md:text-right" : ""}`}>
+                    <h3 className="text-2xl font-bold text-foreground mb-1">
+                      {member.name}
+                    </h3>
+                    <p className="text-sm font-semibold text-primary mb-4">
+                      {member.role}
+                    </p>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {member.description}
+                    </p>
+                    <div className={`flex gap-3 mt-4 justify-center ${isEven ? "md:justify-start" : "md:justify-end"}`}>
+                      <button className="p-2 rounded-full bg-muted hover:bg-muted/80 transition-colors">
+                        <Linkedin className="h-4 w-4 text-muted-foreground" />
+                      </button>
+                      <button className="p-2 rounded-full bg-muted hover:bg-muted/80 transition-colors">
+                        <Mail className="h-4 w-4 text-muted-foreground" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Our Journey Section (AFTER members) */}
       <section className="py-16 bg-muted/20">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
@@ -128,60 +179,6 @@ const Team = () => {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Team Members - Zigzag Layout */}
-      <section className="py-16">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-14 text-foreground">
-            Meet the Leadership
-          </h2>
-
-          <div className="max-w-5xl mx-auto space-y-16">
-            {teamMembers.map((member, index) => {
-              const isEven = index % 2 === 0;
-              return (
-                <div
-                  key={member.name}
-                  className={`flex flex-col md:flex-row items-center gap-8 md:gap-12 animate-fade-in ${
-                    !isEven ? "md:flex-row-reverse" : ""
-                  }`}
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  {/* Avatar / Image Side */}
-                  <div className="flex-shrink-0">
-                    <div className="w-36 h-36 md:w-44 md:h-44 rounded-2xl bg-gradient-to-br from-primary/80 to-primary flex items-center justify-center shadow-lg">
-                      <span className="text-4xl md:text-5xl font-bold text-primary-foreground">
-                        {member.initials}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Content Side */}
-                  <div className={`flex-1 text-center md:text-left ${!isEven ? "md:text-right" : ""}`}>
-                    <h3 className="text-2xl font-bold text-foreground mb-1">
-                      {member.name}
-                    </h3>
-                    <p className="text-sm font-semibold text-primary mb-4">
-                      {member.role}
-                    </p>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {member.description}
-                    </p>
-                    <div className={`flex gap-3 mt-4 justify-center ${isEven ? "md:justify-start" : "md:justify-end"}`}>
-                      <button className="p-2 rounded-full bg-muted hover:bg-muted/80 transition-colors">
-                        <Linkedin className="h-4 w-4 text-muted-foreground" />
-                      </button>
-                      <button className="p-2 rounded-full bg-muted hover:bg-muted/80 transition-colors">
-                        <Mail className="h-4 w-4 text-muted-foreground" />
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
           </div>
         </div>
       </section>
