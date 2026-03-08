@@ -55,9 +55,9 @@ const Header = () => {
   return (
     <>
       {/* Desktop Header - Fixed Top */}
-      <header className="fixed top-0 left-0 right-0 z-50 px-4 py-3 hidden md:block">
-        <nav className="max-w-7xl mx-auto backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl shadow-lg">
-          <div className="flex items-center justify-between px-6 py-3">
+      <header className="fixed top-0 left-0 right-0 z-50 hidden md:block">
+        <nav className="w-full backdrop-blur-xl bg-background/80 border-b border-border shadow-sm">
+          <div className="flex items-center justify-between px-8 py-3 max-w-7xl mx-auto">
             {/* Logo */}
             <Link 
               to="/" 
@@ -118,9 +118,9 @@ const Header = () => {
       </header>
 
       {/* Mobile Header - Fixed Top (Logo + More only) */}
-      <header className="fixed top-0 left-0 right-0 z-50 px-4 py-3 md:hidden">
-        <nav className="backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl shadow-lg">
-          <div className="flex items-center justify-between px-4 py-2">
+      <header className="fixed top-0 left-0 right-0 z-50 md:hidden">
+        <nav className="w-full backdrop-blur-xl bg-background/80 border-b border-border shadow-sm">
+          <div className="flex items-center justify-between px-4 py-2.5">
             {/* Logo */}
             <Link 
               to="/" 
