@@ -34,10 +34,11 @@ const Header = () => {
   ];
 
   const moreLinks = [
-    { name: "Web Services", path: "/web-services" },
-    { name: "App Development", path: "/app-development" },
-    { name: "Maintenance & Support", path: "/maintenance-support" },
+    { name: "Web Services", path: "/services/web" },
+    { name: "App Development", path: "/services/app" },
+    { name: "Maintenance & Support", path: "/services/maintenance" },
     { name: "Products", path: "/products" },
+    { name: "Team", path: "/team" },
   ];
 
   const handleNavClick = (path: string) => {
