@@ -39,7 +39,7 @@ const Header = () => {
     { name: "App Development", path: "/services/app" },
     { name: "Maintenance & Support", path: "/services/maintenance" },
     { name: "Products", path: "/products" },
-    { name: "Team", path: "/team" },
+    { name: "About Us", path: "/team" },
   ];
 
   const handleNavClick = (path: string) => {
