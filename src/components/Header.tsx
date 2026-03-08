@@ -64,7 +64,7 @@ const Header = () => {
               to="/" 
               className="flex items-center gap-2 text-xl font-bold text-foreground"
             >
-              <img src={wwiLogo} alt="WWI Logo" className="h-10 w-auto" />
+              <img src={wwiLogo} alt="WWI Logo" className="h-8 w-auto" />
               Work Wizards Innovations
             </Link>
 
