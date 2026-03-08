@@ -1,4 +1,4 @@
-import { ArrowLeft, Linkedin, Mail, Calendar, Users, Rocket, Handshake } from "lucide-react";
+import { ArrowLeft, Linkedin, Instagram, Globe, Calendar, Users, Rocket, Handshake } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
