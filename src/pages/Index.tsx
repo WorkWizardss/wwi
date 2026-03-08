@@ -338,11 +338,6 @@ const CTA = () => {
 const Careers = () => {
   const navigate = useNavigate();
 
-  const openPositions = [
-    { title: "Full Stack Developer", type: "Remote • Full Time" },
-    { title: "UI/UX Designer", type: "Remote • Full Time" },
-  ];
-
   return (
     <section id="careers" className="py-14 md:py-24 bg-gradient-to-b from-background to-secondary/30">
       <div className="container mx-auto px-4 md:px-6">
@@ -383,36 +378,22 @@ const Careers = () => {
               </ul>
             </Card>
 
-            <Card className="p-8 border-border hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-              <div className="mb-4 inline-flex p-3 rounded-xl bg-secondary">
-                <Users className="h-6 w-6 text-foreground" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3 text-card-foreground">Open Positions</h3>
-              <p className="text-muted-foreground mb-4">
-                We're always looking for talented individuals to join our growing team.
-              </p>
-              <div className="space-y-3">
-                {openPositions.map((pos) => (
-                  <div
-                    key={pos.title}
-                    className="p-3 rounded-lg bg-secondary border border-border flex items-center justify-between cursor-pointer hover:bg-secondary/80 transition-colors"
-                    onClick={() => navigate(`/careers/apply?position=${encodeURIComponent(pos.title)}`)}
-                  >
-                    <div>
-                      <p className="font-medium text-sm text-foreground">{pos.title}</p>
-                      <p className="text-xs text-muted-foreground">{pos.type}</p>
-                    </div>
-                    <ArrowRight className="h-4 w-4 text-muted-foreground" />
-                  </div>
-                ))}
+            <Card className="p-8 border-border hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
+              <div>
+                <div className="mb-4 inline-flex p-3 rounded-xl bg-secondary">
+                  <Users className="h-6 w-6 text-foreground" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-card-foreground">We're Hiring!</h3>
+                <p className="text-muted-foreground mb-4">
+                  We're always looking for talented individuals to join our growing team. Explore open positions and start your journey with us.
+                </p>
               </div>
               <Button 
-                variant="outline" 
-                className="mt-4 w-full"
-                onClick={() => navigate("/careers/apply")}
+                className="w-full group"
+                onClick={() => navigate("/careers")}
               >
-                Apply Now
-                <ArrowRight className="ml-2 h-4 w-4" />
+                Explore Careers at WWI
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Card>
           </div>
