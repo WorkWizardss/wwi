@@ -239,9 +239,18 @@ const CareersApply = () => {
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               ) : (
-                <Button onClick={handleSubmit} className="group bg-green-600 hover:bg-green-700">
-                  Submit Application
-                  <CheckCircle className="ml-2 h-4 w-4" />
+                <Button onClick={handleSubmit} disabled={isSubmitting} className="group bg-green-600 hover:bg-green-700">
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Submitting...
+                    </>
+                  ) : (
+                    <>
+                      Submit Application
+                      <CheckCircle className="ml-2 h-4 w-4" />
+                    </>
+                  )}
                 </Button>
               )}
             </div>
