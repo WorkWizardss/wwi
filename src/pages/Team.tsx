@@ -139,12 +139,21 @@ const Team = () => {
                       {member.description}
                     </p>
                     <div className={`flex gap-3 mt-4 justify-center ${isEven ? "md:justify-start" : "md:justify-end"}`}>
-                      <button className="p-2 rounded-full bg-muted hover:bg-muted/80 transition-colors">
-                        <Linkedin className="h-4 w-4 text-muted-foreground" />
-                      </button>
-                      <button className="p-2 rounded-full bg-muted hover:bg-muted/80 transition-colors">
-                        <Mail className="h-4 w-4 text-muted-foreground" />
-                      </button>
+                      {member.linkedin && (
+                        <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-muted hover:bg-muted/80 transition-colors">
+                          <Linkedin className="h-4 w-4 text-muted-foreground" />
+                        </a>
+                      )}
+                      {member.instagram && (
+                        <a href={member.instagram} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-muted hover:bg-muted/80 transition-colors">
+                          <Instagram className="h-4 w-4 text-muted-foreground" />
+                        </a>
+                      )}
+                      {member.website && (
+                        <a href={member.website} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-muted hover:bg-muted/80 transition-colors">
+                          <Globe className="h-4 w-4 text-muted-foreground" />
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>
