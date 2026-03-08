@@ -336,68 +336,80 @@ const CTA = () => {
 
 // Careers Section
 const Careers = () => {
+  const navigate = useNavigate();
+
+  const openPositions = [
+    { title: "Full Stack Developer", type: "Remote • Full Time" },
+    { title: "UI/UX Designer", type: "Remote • Full Time" },
+  ];
+
   return (
-    <section id="careers" className="py-14 md:py-24 bg-gradient-to-b from-background to-gray-50">
+    <section id="careers" className="py-14 md:py-24 bg-gradient-to-b from-background to-secondary/30">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-10 md:mb-16 animate-fade-in">
             <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-foreground">
               Join Our Team
             </h2>
-            <div className="w-16 md:w-20 h-1 bg-gradient-to-r from-gray-300 via-gray-600 to-gray-300 mx-auto mb-6 md:mb-8"></div>
+            <div className="w-16 md:w-20 h-1 bg-gradient-to-r from-muted via-foreground to-muted mx-auto mb-6 md:mb-8"></div>
             <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto">
               Be part of the next generation of digital innovators
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 animate-fade-in">
-            <Card className="p-8 border-gray-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-              <div className="mb-4 inline-flex p-3 rounded-xl bg-gradient-to-br from-gray-100 to-gray-50">
-                <Sparkles className="h-6 w-6 text-gray-700" />
+            <Card className="p-8 border-border hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <div className="mb-4 inline-flex p-3 rounded-xl bg-secondary">
+                <Sparkles className="h-6 w-6 text-foreground" />
               </div>
               <h3 className="text-xl font-semibold mb-3 text-card-foreground">Why Work With Us?</h3>
               <ul className="space-y-3 text-muted-foreground">
                 <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
+                  <div className="w-1.5 h-1.5 bg-foreground rounded-full"></div>
                   Work on cutting-edge technologies
                 </li>
                 <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
+                  <div className="w-1.5 h-1.5 bg-foreground rounded-full"></div>
                   Flexible remote work options
                 </li>
                 <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
+                  <div className="w-1.5 h-1.5 bg-foreground rounded-full"></div>
                   Continuous learning opportunities
                 </li>
                 <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
+                  <div className="w-1.5 h-1.5 bg-foreground rounded-full"></div>
                   Collaborative team environment
                 </li>
               </ul>
             </Card>
 
-            <Card className="p-8 border-gray-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-              <div className="mb-4 inline-flex p-3 rounded-xl bg-gradient-to-br from-gray-100 to-gray-50">
-                <Users className="h-6 w-6 text-gray-700" />
+            <Card className="p-8 border-border hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <div className="mb-4 inline-flex p-3 rounded-xl bg-secondary">
+                <Users className="h-6 w-6 text-foreground" />
               </div>
               <h3 className="text-xl font-semibold mb-3 text-card-foreground">Open Positions</h3>
               <p className="text-muted-foreground mb-4">
                 We're always looking for talented individuals to join our growing team.
               </p>
               <div className="space-y-3">
-                <div className="p-3 rounded-lg bg-gray-50 border border-gray-200">
-                  <p className="font-medium text-sm text-gray-800">Full Stack Developer</p>
-                  <p className="text-xs text-muted-foreground">Remote • Full Time</p>
-                </div>
-                <div className="p-3 rounded-lg bg-gray-50 border border-gray-200">
-                  <p className="font-medium text-sm text-gray-800">UI/UX Designer</p>
-                  <p className="text-xs text-muted-foreground">Remote • Full Time</p>
-                </div>
+                {openPositions.map((pos) => (
+                  <div
+                    key={pos.title}
+                    className="p-3 rounded-lg bg-secondary border border-border flex items-center justify-between cursor-pointer hover:bg-secondary/80 transition-colors"
+                    onClick={() => navigate(`/careers/apply?position=${encodeURIComponent(pos.title)}`)}
+                  >
+                    <div>
+                      <p className="font-medium text-sm text-foreground">{pos.title}</p>
+                      <p className="text-xs text-muted-foreground">{pos.type}</p>
+                    </div>
+                    <ArrowRight className="h-4 w-4 text-muted-foreground" />
+                  </div>
+                ))}
               </div>
               <Button 
                 variant="outline" 
                 className="mt-4 w-full"
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => navigate("/careers/apply")}
               >
                 Apply Now
                 <ArrowRight className="ml-2 h-4 w-4" />
