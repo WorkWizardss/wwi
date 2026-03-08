@@ -18,6 +18,11 @@ type FormData = {
   age: string;
   experience: string;
   education: string;
+  institute: string;
+  cgpa: string;
+  previousCompany: string;
+  previousRole: string;
+  previousDuration: string;
   coverLetter: string;
   resumeFile: File | null;
   whyJoin: string;
@@ -33,6 +38,11 @@ const initialFormData: FormData = {
   age: "",
   experience: "",
   education: "",
+  institute: "",
+  cgpa: "",
+  previousCompany: "",
+  previousRole: "",
+  previousDuration: "",
   coverLetter: "",
   resumeFile: null,
   whyJoin: "",
@@ -262,145 +272,202 @@ const Step1Contact = ({ formData, onChange }: { formData: FormData; onChange: (f
 );
 
 /* ======================== STEP 2: Details ======================== */
-const Step2Details = ({ formData, onChange, position }: { formData: FormData; onChange: (field: keyof FormData, value: string | File | null) => void; position: string }) => (
-  <div className="space-y-5">
-    <div className="text-center mb-2">
-      <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-1">Application Details</h2>
-      <p className="text-sm text-muted-foreground">Tell us more about yourself</p>
-    </div>
+const Step2Details = ({ formData, onChange, position }: { formData: FormData; onChange: (field: keyof FormData, value: string | File | null) => void; position: string }) => {
+  const hasExperience = formData.experience && formData.experience !== "fresher";
 
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-      <div>
-        <label className="flex items-center gap-2 text-sm font-medium text-foreground mb-2">
-          <User className="h-4 w-4 text-muted-foreground" />
-          Full Name
-        </label>
-        <Input placeholder="John Doe" value={formData.name} onChange={(e) => onChange("name", e.target.value)} />
+  return (
+    <div className="space-y-5">
+      <div className="text-center mb-2">
+        <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-1">Application Details</h2>
+        <p className="text-sm text-muted-foreground">Tell us more about yourself</p>
       </div>
-      <div>
-        <label className="flex items-center gap-2 text-sm font-medium text-foreground mb-2">
-          <Calendar className="h-4 w-4 text-muted-foreground" />
-          Age
-        </label>
-        <Input type="number" placeholder="25" min={16} max={80} value={formData.age} onChange={(e) => onChange("age", e.target.value)} />
-      </div>
-    </div>
 
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-      <div>
-        <label className="flex items-center gap-2 text-sm font-medium text-foreground mb-2">
-          <Briefcase className="h-4 w-4 text-muted-foreground" />
-          Experience
-        </label>
-        <Select value={formData.experience} onValueChange={(val) => onChange("experience", val)}>
-          <SelectTrigger><SelectValue placeholder="Select experience" /></SelectTrigger>
-          <SelectContent>
-            <SelectItem value="fresher">Fresher</SelectItem>
-            <SelectItem value="0-1">0-1 Years</SelectItem>
-            <SelectItem value="1-3">1-3 Years</SelectItem>
-            <SelectItem value="3-5">3-5 Years</SelectItem>
-            <SelectItem value="5+">5+ Years</SelectItem>
-          </SelectContent>
-        </Select>
-      </div>
-      <div>
-        <label className="flex items-center gap-2 text-sm font-medium text-foreground mb-2">
-          <GraduationCap className="h-4 w-4 text-muted-foreground" />
-          Education
-        </label>
-        <Select value={formData.education} onValueChange={(val) => onChange("education", val)}>
-          <SelectTrigger><SelectValue placeholder="Select education" /></SelectTrigger>
-          <SelectContent>
-            <SelectItem value="high-school">High School</SelectItem>
-            <SelectItem value="diploma">Diploma</SelectItem>
-            <SelectItem value="bachelors">Bachelor's Degree</SelectItem>
-            <SelectItem value="masters">Master's Degree</SelectItem>
-            <SelectItem value="phd">PhD</SelectItem>
-            <SelectItem value="other">Other</SelectItem>
-          </SelectContent>
-        </Select>
-      </div>
-    </div>
-
-    <div>
-      <label className="flex items-center gap-2 text-sm font-medium text-foreground mb-2">
-        <FileText className="h-4 w-4 text-muted-foreground" />
-        Cover Letter
-      </label>
-      <Textarea
-        placeholder="Tell us about yourself, your skills, and why you're a great fit..."
-        rows={4}
-        value={formData.coverLetter}
-        onChange={(e) => onChange("coverLetter", e.target.value)}
-        className="resize-none"
-      />
-    </div>
-
-    <div>
-      <label className="flex items-center gap-2 text-sm font-medium text-foreground mb-2">
-        <Upload className="h-4 w-4 text-muted-foreground" />
-        Upload Resume (optional)
-      </label>
-      <div className="relative">
-        <Input
-          type="file"
-          accept=".pdf,.doc,.docx"
-          onChange={(e) => onChange("resumeFile", e.target.files?.[0] || null)}
-          className="file:mr-4 file:py-1 file:px-3 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-secondary file:text-foreground hover:file:bg-secondary/80 cursor-pointer"
-        />
-        {formData.resumeFile && (
-          <p className="text-xs text-muted-foreground mt-1">Selected: {formData.resumeFile.name}</p>
-        )}
-      </div>
-    </div>
-
-    {/* Job-Related Questions */}
-    <div className="pt-4 border-t border-border">
-      <h3 className="flex items-center gap-2 text-base font-semibold text-foreground mb-4">
-        <HelpCircle className="h-4 w-4 text-muted-foreground" />
-        Questions for {position}
-      </h3>
-
-      <div className="space-y-4">
+      {/* Personal Info */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className="text-sm font-medium text-foreground mb-2 block">
-            Why do you want to join Work Wizards Innovations?
+          <label className="flex items-center gap-2 text-sm font-medium text-foreground mb-2">
+            <User className="h-4 w-4 text-muted-foreground" />
+            Full Name
+          </label>
+          <Input placeholder="John Doe" value={formData.name} onChange={(e) => onChange("name", e.target.value)} />
+        </div>
+        <div>
+          <label className="flex items-center gap-2 text-sm font-medium text-foreground mb-2">
+            <Calendar className="h-4 w-4 text-muted-foreground" />
+            Age
+          </label>
+          <Input type="number" placeholder="25" min={16} max={80} value={formData.age} onChange={(e) => onChange("age", e.target.value)} />
+        </div>
+      </div>
+
+      {/* Education Section */}
+      <div className="pt-4 border-t border-border">
+        <h3 className="flex items-center gap-2 text-base font-semibold text-foreground mb-4">
+          <GraduationCap className="h-4 w-4 text-muted-foreground" />
+          Education Details
+        </h3>
+        <div className="space-y-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label className="text-sm font-medium text-foreground mb-2 block">Education Level</label>
+              <Select value={formData.education} onValueChange={(val) => onChange("education", val)}>
+                <SelectTrigger><SelectValue placeholder="Select education" /></SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="high-school">High School</SelectItem>
+                  <SelectItem value="diploma">Diploma</SelectItem>
+                  <SelectItem value="bachelors">Bachelor's Degree</SelectItem>
+                  <SelectItem value="masters">Master's Degree</SelectItem>
+                  <SelectItem value="phd">PhD</SelectItem>
+                  <SelectItem value="other">Other</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+            <div>
+              <label className="text-sm font-medium text-foreground mb-2 block">CGPA / Percentage</label>
+              <Input placeholder="e.g., 8.5 CGPA or 85%" value={formData.cgpa} onChange={(e) => onChange("cgpa", e.target.value)} />
+            </div>
+          </div>
+          <div>
+            <label className="flex items-center gap-2 text-sm font-medium text-foreground mb-2">
+              <Building2 className="h-4 w-4 text-muted-foreground" />
+              Institute / University Name
+            </label>
+            <Input placeholder="e.g., IIT Bombay, JNTU Hyderabad" value={formData.institute} onChange={(e) => onChange("institute", e.target.value)} />
+          </div>
+        </div>
+      </div>
+
+      {/* Experience Section */}
+      <div className="pt-4 border-t border-border">
+        <h3 className="flex items-center gap-2 text-base font-semibold text-foreground mb-4">
+          <Briefcase className="h-4 w-4 text-muted-foreground" />
+          Experience Details
+        </h3>
+        <div className="space-y-4">
+          <div>
+            <label className="text-sm font-medium text-foreground mb-2 block">Experience Level</label>
+            <Select value={formData.experience} onValueChange={(val) => onChange("experience", val)}>
+              <SelectTrigger><SelectValue placeholder="Select experience" /></SelectTrigger>
+              <SelectContent>
+                <SelectItem value="fresher">Fresher</SelectItem>
+                <SelectItem value="0-1">0-1 Years</SelectItem>
+                <SelectItem value="1-3">1-3 Years</SelectItem>
+                <SelectItem value="3-5">3-5 Years</SelectItem>
+                <SelectItem value="5+">5+ Years</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+
+          {hasExperience && (
+            <div className="p-4 rounded-xl bg-secondary/30 border border-border space-y-4 animate-fade-in">
+              <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Previous Employment</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="flex items-center gap-2 text-sm font-medium text-foreground mb-2">
+                    <Building2 className="h-4 w-4 text-muted-foreground" />
+                    Company Name
+                  </label>
+                  <Input placeholder="e.g., TCS, Infosys" value={formData.previousCompany} onChange={(e) => onChange("previousCompany", e.target.value)} />
+                </div>
+                <div>
+                  <label className="flex items-center gap-2 text-sm font-medium text-foreground mb-2">
+                    <Award className="h-4 w-4 text-muted-foreground" />
+                    Role / Designation
+                  </label>
+                  <Input placeholder="e.g., Software Engineer" value={formData.previousRole} onChange={(e) => onChange("previousRole", e.target.value)} />
+                </div>
+              </div>
+              <div>
+                <label className="text-sm font-medium text-foreground mb-2 block">Duration</label>
+                <Input placeholder="e.g., Jan 2022 - Dec 2024" value={formData.previousDuration} onChange={(e) => onChange("previousDuration", e.target.value)} />
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Cover Letter & Resume */}
+      <div className="pt-4 border-t border-border space-y-4">
+        <div>
+          <label className="flex items-center gap-2 text-sm font-medium text-foreground mb-2">
+            <FileText className="h-4 w-4 text-muted-foreground" />
+            Cover Letter
           </label>
           <Textarea
-            placeholder="Share your motivation..."
-            rows={3}
-            value={formData.whyJoin}
-            onChange={(e) => onChange("whyJoin", e.target.value)}
+            placeholder="Tell us about yourself, your skills, and why you're a great fit..."
+            rows={4}
+            value={formData.coverLetter}
+            onChange={(e) => onChange("coverLetter", e.target.value)}
             className="resize-none"
           />
         </div>
 
         <div>
-          <label className="text-sm font-medium text-foreground mb-2 block">
-            When can you start? (Availability)
+          <label className="flex items-center gap-2 text-sm font-medium text-foreground mb-2">
+            <Upload className="h-4 w-4 text-muted-foreground" />
+            Upload Resume (optional)
           </label>
-          <Input
-            placeholder="e.g., Immediately, 2 weeks notice, etc."
-            value={formData.availability}
-            onChange={(e) => onChange("availability", e.target.value)}
-          />
+          <div className="relative">
+            <Input
+              type="file"
+              accept=".pdf,.doc,.docx"
+              onChange={(e) => onChange("resumeFile", e.target.files?.[0] || null)}
+              className="file:mr-4 file:py-1 file:px-3 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-secondary file:text-foreground hover:file:bg-secondary/80 cursor-pointer"
+            />
+            {formData.resumeFile && (
+              <p className="text-xs text-muted-foreground mt-1">Selected: {formData.resumeFile.name}</p>
+            )}
+          </div>
         </div>
+      </div>
 
-        <div>
-          <label className="text-sm font-medium text-foreground mb-2 block">
-            Expected Salary (per annum, optional)
-          </label>
-          <Input
-            placeholder="e.g., ₹5,00,000"
-            value={formData.expectedSalary}
-            onChange={(e) => onChange("expectedSalary", e.target.value)}
-          />
+      {/* Job-Related Questions */}
+      <div className="pt-4 border-t border-border">
+        <h3 className="flex items-center gap-2 text-base font-semibold text-foreground mb-4">
+          <HelpCircle className="h-4 w-4 text-muted-foreground" />
+          Questions for {position}
+        </h3>
+
+        <div className="space-y-4">
+          <div>
+            <label className="text-sm font-medium text-foreground mb-2 block">
+              Why do you want to join Work Wizards Innovations?
+            </label>
+            <Textarea
+              placeholder="Share your motivation..."
+              rows={3}
+              value={formData.whyJoin}
+              onChange={(e) => onChange("whyJoin", e.target.value)}
+              className="resize-none"
+            />
+          </div>
+
+          <div>
+            <label className="text-sm font-medium text-foreground mb-2 block">
+              When can you start? (Availability)
+            </label>
+            <Input
+              placeholder="e.g., Immediately, 2 weeks notice, etc."
+              value={formData.availability}
+              onChange={(e) => onChange("availability", e.target.value)}
+            />
+          </div>
+
+          <div>
+            <label className="text-sm font-medium text-foreground mb-2 block">
+              Expected Salary (per annum, optional)
+            </label>
+            <Input
+              placeholder="e.g., ₹5,00,000"
+              value={formData.expectedSalary}
+              onChange={(e) => onChange("expectedSalary", e.target.value)}
+            />
+          </div>
         </div>
       </div>
     </div>
-  </div>
-);
-
+  );
+};
 /* ======================== STEP 3: Preview ======================== */
 const Step3Preview = ({ formData, position }: { formData: FormData; position: string }) => {
   const fields = [
@@ -409,8 +476,17 @@ const Step3Preview = ({ formData, position }: { formData: FormData; position: st
     { label: "Email", value: formData.email, icon: Mail },
     { label: "Full Name", value: formData.name, icon: User },
     { label: "Age", value: formData.age, icon: Calendar },
-    { label: "Experience", value: formData.experience, icon: Briefcase },
     { label: "Education", value: formData.education, icon: GraduationCap },
+    { label: "Institute", value: formData.institute, icon: Building2 },
+    { label: "CGPA / %", value: formData.cgpa, icon: Award },
+    { label: "Experience", value: formData.experience, icon: Briefcase },
+    ...(formData.experience && formData.experience !== "fresher"
+      ? [
+          { label: "Previous Company", value: formData.previousCompany, icon: Building2 },
+          { label: "Previous Role", value: formData.previousRole, icon: Award },
+          { label: "Duration", value: formData.previousDuration, icon: Calendar },
+        ]
+      : []),
     { label: "Resume", value: formData.resumeFile?.name || "Not uploaded", icon: Upload },
   ];
 
