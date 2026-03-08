@@ -429,7 +429,7 @@ const Contact = () => {
     }
 
     try {
-      const response = await fetch('https://formsubmit.co/ajax/workwizardsinnovations.official@gmail.com', {
+      const response = await fetch('https://formsubmit.co/ajax/official@wwi.org.in', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -589,13 +589,13 @@ const Contact = () => {
                   </a>
 
                   <a
-                    href="mailto:workwizardsinnovations.official@gmail.com"
+                    href="mailto:official@wwi.org.in"
                     className="flex items-center gap-3 p-3 rounded-lg hover:bg-white transition-colors group"
                   >
                     <div className="p-2 rounded-lg bg-gray-900 group-hover:bg-gray-800 transition-colors">
                       <Mail className="h-5 w-5 text-white" />
                     </div>
-                    <span className="font-medium text-gray-700 text-xs sm:text-sm break-all">workwizardsinnovations.official@gmail.com</span>
+                    <span className="font-medium text-gray-700 text-xs sm:text-sm">official@wwi.org.in</span>
                   </a>
                 </div>
               </div>
