@@ -123,6 +123,7 @@ const CareersApply = () => {
   const handleSubmit = async () => {
     setIsSubmitting(true);
     try {
+      // Submit to Cloudflare Worker (DB + R2)
       await submitApplication({
         position,
         name: formData.name,
@@ -143,6 +144,37 @@ const CareersApply = () => {
         subscribe: formData.subscribe,
         resumeFile: formData.resumeFile,
       });
+
+      // Send email notification via EmailJS
+      try {
+        await emailjs.send(
+          "service_puwq0nk",
+          "template_n5m04mj",
+          {
+            position,
+            name: formData.name,
+            email: formData.email,
+            mobile: formData.mobile,
+            age: formData.age,
+            experience: formData.experience,
+            education: formData.education,
+            institute: formData.institute,
+            cgpa: formData.cgpa,
+            previousCompany: formData.previousCompany || "N/A",
+            previousRole: formData.previousRole || "N/A",
+            previousDuration: formData.previousDuration || "N/A",
+            coverLetter: formData.coverLetter,
+            whyJoin: formData.whyJoin,
+            availability: formData.availability,
+            expectedSalary: formData.expectedSalary,
+            subscribe: formData.subscribe ? "Yes" : "No",
+          },
+          "-c7DZgkRbTmCR1MTg"
+        );
+      } catch (emailError) {
+        console.error("Email notification failed:", emailError);
+      }
+
       setSubmitted(true);
       toast({ title: "Application Submitted!", description: "We'll review your application and get back to you soon." });
     } catch (error) {
