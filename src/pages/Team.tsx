@@ -1,4 +1,4 @@
-import { ArrowLeft, Linkedin, Mail, Calendar, Users, Rocket, Handshake } from "lucide-react";
+import { ArrowLeft, Linkedin, Instagram, Globe, Calendar, Users, Rocket, Handshake } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
@@ -22,6 +22,9 @@ const teamMembers = [
       "Nalla Venkat is the founder of Work Wizards Innovations and the visionary behind the company's mission and long-term strategy. He leads the organization by defining its direction, identifying new opportunities, and driving innovation across all projects. Venkat focuses on building strong partnerships, guiding the development of new technologies, and ensuring that the company continuously evolves to meet future industry demands.",
     initials: "NV",
     image: venkatImg,
+    linkedin: "https://www.linkedin.com/in/nallavenkat/",
+    instagram: "https://www.instagram.com/venkat.wwi/",
+    website: "https://venkatnalla.in",
   },
   {
     name: "Santhosh Boppudi",
@@ -30,6 +33,9 @@ const teamMembers = [
       "Santhosh Boppudi leads the technological development at Work Wizards Innovations. As CTO, he is responsible for designing the company's technical architecture, overseeing software development, and ensuring that the products are built using efficient and scalable technologies. He plays a key role in transforming ideas into functional digital platforms and maintaining the technological backbone of the organization.",
     initials: "SB",
     image: santhoshImg,
+    linkedin: "https://www.linkedin.com/in/boppudi-santhosh-332b71329/",
+    instagram: "https://www.instagram.com/santhosh.wwi/",
+    website: "https://santhoshboppudi.in",
   },
   {
     name: "Govinda Sai Ram Thammisetty",
@@ -38,6 +44,8 @@ const teamMembers = [
       "Govinda Sai Ram Thammisetty manages the operational structure of the company. As COO, he ensures that projects are executed efficiently and that team coordination remains smooth across all activities. He focuses on operational planning, resource management, and maintaining the workflow required to deliver successful products and services.",
     initials: "GT",
     image: govindImg,
+    linkedin: "https://www.linkedin.com/in/govinda-sai-ram/",
+    instagram: "https://www.instagram.com/ram.wwi/",
   },
   {
     name: "Charan Teja Rajanala",
@@ -46,6 +54,8 @@ const teamMembers = [
       "Charan Teja Rajanala is responsible for the marketing strategy and brand development of Work Wizards Innovations. As CMO, he focuses on promoting the company's products, expanding market reach, and building a strong brand presence. His work involves digital marketing strategies, partnership outreach, and ensuring that the company's innovations reach the right audience.",
     initials: "CR",
     image: charanImg,
+    linkedin: "https://www.linkedin.com/in/rajanalacharanteja/",
+    instagram: "https://www.instagram.com/charan.wwi/",
   },
   {
     name: "Prudhvi Duvvu",
@@ -54,6 +64,8 @@ const teamMembers = [
       "Prudhvi Duvvu oversees the financial planning and management of Work Wizards Innovations. As CFO, he is responsible for managing financial resources, budgeting, and ensuring sustainable financial growth. He plays an important role in maintaining financial stability while supporting the company's expansion and long-term business strategy.",
     initials: "PD",
     image: prudhviImg,
+    linkedin: "https://www.linkedin.com/in/prudhviduvvu/",
+    instagram: "https://www.instagram.com/prudhvi.wwi/",
   },
 ];
 
@@ -127,12 +139,21 @@ const Team = () => {
                       {member.description}
                     </p>
                     <div className={`flex gap-3 mt-4 justify-center ${isEven ? "md:justify-start" : "md:justify-end"}`}>
-                      <button className="p-2 rounded-full bg-muted hover:bg-muted/80 transition-colors">
-                        <Linkedin className="h-4 w-4 text-muted-foreground" />
-                      </button>
-                      <button className="p-2 rounded-full bg-muted hover:bg-muted/80 transition-colors">
-                        <Mail className="h-4 w-4 text-muted-foreground" />
-                      </button>
+                      {member.linkedin && (
+                        <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-muted hover:bg-muted/80 transition-colors">
+                          <Linkedin className="h-4 w-4 text-muted-foreground" />
+                        </a>
+                      )}
+                      {member.instagram && (
+                        <a href={member.instagram} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-muted hover:bg-muted/80 transition-colors">
+                          <Instagram className="h-4 w-4 text-muted-foreground" />
+                        </a>
+                      )}
+                      {member.website && (
+                        <a href={member.website} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-muted hover:bg-muted/80 transition-colors">
+                          <Globe className="h-4 w-4 text-muted-foreground" />
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>
