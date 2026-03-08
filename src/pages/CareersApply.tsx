@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { ArrowRight, ArrowLeft, Upload, CheckCircle, Phone, Mail, User, Calendar, Briefcase, GraduationCap, FileText, HelpCircle, Building2, Award } from "lucide-react";
+import { ArrowRight, ArrowLeft, Upload, CheckCircle, Phone, Mail, User, Calendar, Briefcase, GraduationCap, FileText, HelpCircle, Building2, Award, Loader2 } from "lucide-react";
+import { submitApplication } from "@/lib/api";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
