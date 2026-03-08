@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { ArrowRight, ArrowLeft, Upload, CheckCircle, Phone, Mail, User, Calendar, Briefcase, GraduationCap, FileText, HelpCircle, Building2, Award } from "lucide-react";
+import { ArrowRight, ArrowLeft, Upload, CheckCircle, Phone, Mail, User, Calendar, Briefcase, GraduationCap, FileText, HelpCircle, Building2, Award, Loader2 } from "lucide-react";
+import { submitApplication } from "@/lib/api";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -62,6 +63,7 @@ const CareersApply = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
   const navigate = useNavigate();
 
@@ -117,9 +119,40 @@ const CareersApply = () => {
 
   const handleBack = () => setCurrentStep((prev) => prev - 1);
 
-  const handleSubmit = () => {
-    setSubmitted(true);
-    toast({ title: "Application Submitted!", description: "We'll review your application and get back to you soon." });
+  const handleSubmit = async () => {
+    setIsSubmitting(true);
+    try {
+      await submitApplication({
+        position,
+        name: formData.name,
+        email: formData.email,
+        mobile: formData.mobile,
+        age: formData.age,
+        experience: formData.experience,
+        education: formData.education,
+        institute: formData.institute,
+        cgpa: formData.cgpa,
+        previousCompany: formData.previousCompany,
+        previousRole: formData.previousRole,
+        previousDuration: formData.previousDuration,
+        coverLetter: formData.coverLetter,
+        whyJoin: formData.whyJoin,
+        availability: formData.availability,
+        expectedSalary: formData.expectedSalary,
+        subscribe: formData.subscribe,
+        resumeFile: formData.resumeFile,
+      });
+      setSubmitted(true);
+      toast({ title: "Application Submitted!", description: "We'll review your application and get back to you soon." });
+    } catch (error) {
+      toast({
+        title: "Submission Failed",
+        description: error instanceof Error ? error.message : "Something went wrong. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -206,9 +239,18 @@ const CareersApply = () => {
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               ) : (
-                <Button onClick={handleSubmit} className="group bg-green-600 hover:bg-green-700">
-                  Submit Application
-                  <CheckCircle className="ml-2 h-4 w-4" />
+                <Button onClick={handleSubmit} disabled={isSubmitting} className="group bg-green-600 hover:bg-green-700">
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Submitting...
+                    </>
+                  ) : (
+                    <>
+                      Submit Application
+                      <CheckCircle className="ml-2 h-4 w-4" />
+                    </>
+                  )}
                 </Button>
               )}
             </div>
