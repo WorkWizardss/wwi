@@ -64,7 +64,7 @@ const Header = () => {
               to="/" 
               className="flex items-center gap-2 text-xl font-bold text-foreground"
             >
-              <img src={wwiLogo} alt="WWI Logo" className="h-8 w-8" />
+              <img src={wwiLogo} alt="WWI Logo" className="h-10 w-auto" />
               Work Wizards Innovations
             </Link>
 
@@ -128,7 +128,7 @@ const Header = () => {
               to="/" 
               className="flex items-center gap-2 text-sm font-bold text-foreground whitespace-nowrap"
             >
-              <img src={wwiLogo} alt="WWI Logo" className="h-6 w-6" />
+              <img src={wwiLogo} alt="WWI Logo" className="h-8 w-auto" />
               Work Wizards Innovations
             </Link>
 
