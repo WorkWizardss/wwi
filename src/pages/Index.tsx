@@ -24,7 +24,7 @@ const Hero = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center animate-fade-in">
           <div className="mb-6 animate-scale-in">
-            <img src="/favicon.svg" alt="WWI Logo" className="w-24 h-24 md:w-32 md:h-32 mx-auto mb-4" />
+            <img src="/favicon.svg" alt="WWI Logo" className="w-36 h-36 md:w-44 md:h-44 mx-auto mb-4" />
           </div>
 
           <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold mb-4 md:mb-6 tracking-tight">
