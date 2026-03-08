@@ -62,10 +62,6 @@ const Hero = () => {
             <span className="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
             <span className="text-sm font-medium text-muted-foreground">Next-Gen Digital Solutions</span>
           </div>
-            >
-              Get In Touch
-            </Button>
-          </div>
         </div>
       </div>
 
