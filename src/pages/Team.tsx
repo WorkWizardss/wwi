@@ -2,7 +2,11 @@ import { ArrowLeft, Linkedin, Mail, Calendar, Users, Rocket, Handshake } from "l
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
-
+import venkatImg from "@/assets/team-venkat.jpg";
+import santhoshImg from "@/assets/team-santhosh.jpeg";
+import govindImg from "@/assets/team-govind.jpeg";
+import charanImg from "@/assets/team-charan.jpeg";
+import prudhviImg from "@/assets/team-prudhvi.jpeg";
 const milestones = [
   { icon: Calendar, date: "Sep 2025", text: "Founded by a team of 5 passionate innovators" },
   { icon: Rocket, date: "Dec 2025", text: "First collaboration with Glowvai" },
