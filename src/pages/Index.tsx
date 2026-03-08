@@ -29,7 +29,7 @@ const Hero = () => {
             </div>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold mb-4 md:mb-6 tracking-tight">
             <span className="bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent">
               Work Wizards
             </span>
@@ -37,7 +37,7 @@ const Hero = () => {
             <span className="text-gray-800">Innovations</span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto font-light">
+          <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-8 md:mb-12 max-w-2xl mx-auto font-light">
             Innovating Web, Apps & Beyond
           </p>
 
@@ -74,25 +74,25 @@ const Hero = () => {
 // About Section
 const About = () => {
   return (
-    <section id="about" className="py-24 bg-background pt-32">
-      <div className="container mx-auto px-6">
+    <section id="about" className="py-14 md:py-24 bg-background pt-20 md:pt-32">
+      <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+          <div className="text-center mb-10 md:mb-16 animate-fade-in">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-foreground">
               About Us
             </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-gray-300 via-gray-600 to-gray-300 mx-auto mb-8"></div>
+            <div className="w-16 md:w-20 h-1 bg-gradient-to-r from-gray-300 via-gray-600 to-gray-300 mx-auto mb-6 md:mb-8"></div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6 animate-slide-up">
-              <h3 className="text-2xl font-semibold text-gray-800">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div className="space-y-4 md:space-y-6 animate-slide-up">
+              <h3 className="text-xl md:text-2xl font-semibold text-gray-800">
                 Turning Ideas Into Digital Reality
               </h3>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                 At Work Wizards Innovations, we are a next-gen tech startup dedicated to providing innovative digital solutions that empower businesses and professionals.
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                 Our expertise spans custom web development, mobile app creation, ongoing technical support, and launching our own branded digital platforms that solve real-world problems.
               </p>
               <Button 
@@ -158,23 +158,23 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-24 bg-gradient-to-b from-gray-50 to-background">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+    <section id="services" className="py-14 md:py-24 bg-gradient-to-b from-gray-50 to-background">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="text-center mb-10 md:mb-16 animate-fade-in">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-foreground">
             Our Services
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-gray-300 via-gray-600 to-gray-300 mx-auto mb-8"></div>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <div className="w-16 md:w-20 h-1 bg-gradient-to-r from-gray-300 via-gray-600 to-gray-300 mx-auto mb-6 md:mb-8"></div>
+          <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto">
             Comprehensive digital solutions designed to elevate your business
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-7xl mx-auto">
           {services.map((service, index) => (
             <Card
               key={index}
-              className="p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer group border-gray-200 bg-card animate-fade-in"
+              className="p-5 md:p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer group border-gray-200 bg-card animate-fade-in"
               style={{ animationDelay: `${index * 100}ms` }}
               onClick={() => navigate(service.path)}
             >
@@ -226,20 +226,20 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <section className="py-24 bg-background">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+    <section className="py-14 md:py-24 bg-background">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="text-center mb-10 md:mb-16 animate-fade-in">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-foreground">
             Why Choose Us
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-gray-300 via-gray-600 to-gray-300 mx-auto mb-8"></div>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <div className="w-16 md:w-20 h-1 bg-gradient-to-r from-gray-300 via-gray-600 to-gray-300 mx-auto mb-6 md:mb-8"></div>
+          <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto">
             We deliver excellence through innovation, reliability, and unwavering commitment
           </p>
         </div>
 
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
             {reasons.map((reason, index) => (
               <div
                 key={index}
@@ -248,7 +248,7 @@ const WhyChooseUs = () => {
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-50 rounded-2xl transform group-hover:scale-105 transition-transform duration-300"></div>
                 
-                <div className="relative p-8 rounded-2xl border border-gray-200 bg-card hover:shadow-xl transition-all duration-300">
+                <div className="relative p-5 md:p-8 rounded-2xl border border-gray-200 bg-card hover:shadow-xl transition-all duration-300">
                   <div className="flex items-start gap-6">
                     <div className="flex-shrink-0">
                       <div className="p-4 rounded-xl bg-gradient-to-br from-gray-900 to-gray-700 shadow-lg">
@@ -257,7 +257,7 @@ const WhyChooseUs = () => {
                     </div>
                     
                     <div>
-                      <h3 className="text-2xl font-semibold mb-3 text-card-foreground">
+                      <h3 className="text-xl md:text-2xl font-semibold mb-2 md:mb-3 text-card-foreground">
                         {reason.title}
                       </h3>
                       <p className="text-muted-foreground leading-relaxed">
@@ -278,18 +278,18 @@ const WhyChooseUs = () => {
 // CTA Section
 const CTA = () => {
   return (
-    <section className="py-24 bg-gradient-to-br from-gray-50 to-background">
-      <div className="container mx-auto px-6">
+    <section className="py-14 md:py-24 bg-gradient-to-br from-gray-50 to-background">
+      <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-3xl p-12 md:p-16 relative overflow-hidden shadow-2xl animate-fade-in">
+          <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-2xl md:rounded-3xl p-8 md:p-16 relative overflow-hidden shadow-2xl animate-fade-in">
             <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
             
             <div className="relative z-10 text-center text-white">
-              <h2 className="text-3xl md:text-5xl font-bold mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4 md:mb-6">
                 Ready to Transform Your Digital Presence?
               </h2>
-              <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
-                Join forces with Work Wizards Innovations and bring your vision to life with cutting-edge technology.
+              <p className="text-base md:text-xl text-gray-300 mb-8 md:mb-10 max-w-2xl mx-auto">
+                Join forces with Work Wizards Innovations and bring your vision to life.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -312,18 +312,18 @@ const CTA = () => {
                 </Button>
               </div>
 
-              <div className="mt-12 grid grid-cols-3 gap-8 max-w-2xl mx-auto pt-12 border-t border-white/10">
+              <div className="mt-8 md:mt-12 grid grid-cols-3 gap-4 md:gap-8 max-w-2xl mx-auto pt-8 md:pt-12 border-t border-white/10">
                 <div>
-                  <div className="text-3xl font-bold mb-2">100+</div>
-                  <div className="text-sm text-gray-300">Projects Delivered</div>
+                  <div className="text-2xl md:text-3xl font-bold mb-1 md:mb-2">100+</div>
+                  <div className="text-xs md:text-sm text-gray-300">Projects Delivered</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold mb-2">50+</div>
-                  <div className="text-sm text-gray-300">Happy Clients</div>
+                  <div className="text-2xl md:text-3xl font-bold mb-1 md:mb-2">50+</div>
+                  <div className="text-xs md:text-sm text-gray-300">Happy Clients</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold mb-2">24/7</div>
-                  <div className="text-sm text-gray-300">Support Available</div>
+                  <div className="text-2xl md:text-3xl font-bold mb-1 md:mb-2">24/7</div>
+                  <div className="text-xs md:text-sm text-gray-300">Support Available</div>
                 </div>
               </div>
             </div>
@@ -337,15 +337,15 @@ const CTA = () => {
 // Careers Section
 const Careers = () => {
   return (
-    <section id="careers" className="py-24 bg-gradient-to-b from-background to-gray-50">
-      <div className="container mx-auto px-6">
+    <section id="careers" className="py-14 md:py-24 bg-gradient-to-b from-background to-gray-50">
+      <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+          <div className="text-center mb-10 md:mb-16 animate-fade-in">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-foreground">
               Join Our Team
             </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-gray-300 via-gray-600 to-gray-300 mx-auto mb-8"></div>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <div className="w-16 md:w-20 h-1 bg-gradient-to-r from-gray-300 via-gray-600 to-gray-300 mx-auto mb-6 md:mb-8"></div>
+            <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto">
               Be part of the next generation of digital innovators
             </p>
           </div>
@@ -473,15 +473,15 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-background">
-      <div className="container mx-auto px-6">
+    <section id="contact" className="py-14 md:py-24 bg-background">
+      <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+          <div className="text-center mb-10 md:mb-16 animate-fade-in">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-foreground">
               Get In Touch
             </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-gray-300 via-gray-600 to-gray-300 mx-auto mb-8"></div>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <div className="w-16 md:w-20 h-1 bg-gradient-to-r from-gray-300 via-gray-600 to-gray-300 mx-auto mb-6 md:mb-8"></div>
+            <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto">
               Have a project in mind? Let's discuss how we can help bring your ideas to life.
             </p>
           </div>
