@@ -128,7 +128,7 @@ const Partners = () => {
                 key={partner.name}
                 className="bg-card border border-border rounded-2xl p-8 flex flex-col items-center text-center hover:border-primary/40 transition-all duration-300"
               >
-                <div className="w-24 h-24 rounded-2xl bg-white flex items-center justify-center mb-6 p-3">
+                <div className="w-36 h-36 rounded-2xl bg-white flex items-center justify-center mb-6 p-4">
                   <img
                     src={partner.logo}
                     alt={`${partner.name} logo`}
