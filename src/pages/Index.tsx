@@ -576,22 +576,22 @@ const Contact = () => {
 
                   <a
                     href="tel:+919618131779"
-                    className="flex items-center gap-3 p-3 rounded-lg hover:bg-white transition-colors group"
+                    className="flex items-center gap-3 p-2.5 md:p-3 rounded-lg hover:bg-white transition-colors group"
                   >
-                    <div className="p-2 rounded-lg bg-gray-900 group-hover:bg-gray-800 transition-colors">
-                      <Phone className="h-5 w-5 text-white" />
+                    <div className="p-1.5 md:p-2 rounded-lg bg-gray-900 group-hover:bg-gray-800 transition-colors">
+                      <Phone className="h-4 w-4 md:h-5 md:w-5 text-white" />
                     </div>
-                    <span className="font-medium text-gray-700">+91 9618131779</span>
+                    <span className="font-medium text-gray-700 text-sm">+91 9618131779</span>
                   </a>
 
                   <a
                     href="mailto:official@wwi.org.in"
-                    className="flex items-center gap-3 p-3 rounded-lg hover:bg-white transition-colors group"
+                    className="flex items-center gap-3 p-2.5 md:p-3 rounded-lg hover:bg-white transition-colors group"
                   >
-                    <div className="p-2 rounded-lg bg-gray-900 group-hover:bg-gray-800 transition-colors">
-                      <Mail className="h-5 w-5 text-white" />
+                    <div className="p-1.5 md:p-2 rounded-lg bg-gray-900 group-hover:bg-gray-800 transition-colors">
+                      <Mail className="h-4 w-4 md:h-5 md:w-5 text-white" />
                     </div>
-                    <span className="font-medium text-gray-700 text-xs sm:text-sm">official@wwi.org.in</span>
+                    <span className="font-medium text-gray-700 text-sm">official@wwi.org.in</span>
                   </a>
                 </div>
               </div>
