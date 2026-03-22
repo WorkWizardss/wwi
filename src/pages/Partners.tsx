@@ -35,7 +35,7 @@ const existingPartners = [
     type: "Branding & Promotional Collaboration",
     description:
       "Glowvai partners with Work Wizards Innovations for branding, promotional strategies, and creative campaigns that amplify our digital presence.",
-    website: "https://glowvai.com",
+    website: "https://glowvai.in",
   },
   {
     name: "Mentneo",
