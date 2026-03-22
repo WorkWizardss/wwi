@@ -670,7 +670,7 @@ const Footer = () => {
 
           <div className="pt-8 border-t border-gray-700 text-center">
             <p className="text-gray-400 text-sm">
-              © 2025 Work Wizards Innovations. All rights reserved.
+              © 2025 WORK WIZARDS INNOVATIONS PRIVATE LIMITED. All rights reserved.
             </p>
           </div>
         </div>

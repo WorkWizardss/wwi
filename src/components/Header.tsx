@@ -36,6 +36,7 @@ const Header = () => {
 
   const moreLinks = [
     { name: "Careers", path: "/careers" },
+    { name: "Partners", path: "/partners" },
     { name: "Web Services", path: "/services/web" },
     { name: "App Development", path: "/services/app" },
     { name: "Maintenance & Support", path: "/services/maintenance" },
