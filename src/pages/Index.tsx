@@ -322,15 +322,6 @@ const CTA = () => {
               </div>
 
               <div className="mt-8 md:mt-12 grid grid-cols-3 gap-4 md:gap-8 max-w-2xl mx-auto pt-8 md:pt-12 border-t border-white/10">
-                <div>
-                  <div className="text-2xl md:text-3xl font-bold mb-1 md:mb-2">100+</div>
-                  <div className="text-xs md:text-sm text-gray-300">Projects Delivered</div>
-                </div>
-                <div>
-                  <div className="text-2xl md:text-3xl font-bold mb-1 md:mb-2">50+</div>
-                  <div className="text-xs md:text-sm text-gray-300">Happy Clients</div>
-                </div>
-                <div>
                   <div className="text-2xl md:text-3xl font-bold mb-1 md:mb-2">24/7</div>
                   <div className="text-xs md:text-sm text-gray-300">Support Available</div>
                 </div>
