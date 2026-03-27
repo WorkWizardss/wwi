@@ -15,6 +15,7 @@ const Team = lazy(() => import("./pages/Team"));
 const CareersApply = lazy(() => import("./pages/CareersApply"));
 const CareersPage = lazy(() => import("./pages/Careers"));
 const Partners = lazy(() => import("./pages/Partners"));
+const SocialSphere = lazy(() => import("./pages/SocialSphere"));
 
 const queryClient = new QueryClient();
 
