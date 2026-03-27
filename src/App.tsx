@@ -15,6 +15,7 @@ const Team = lazy(() => import("./pages/Team"));
 const CareersApply = lazy(() => import("./pages/CareersApply"));
 const CareersPage = lazy(() => import("./pages/Careers"));
 const Partners = lazy(() => import("./pages/Partners"));
+const SocialSphere = lazy(() => import("./pages/SocialSphere"));
 
 const queryClient = new QueryClient();
 
@@ -35,6 +36,7 @@ const App = () => (
             <Route path="/careers" element={<CareersPage />} />
             <Route path="/careers/apply" element={<CareersApply />} />
             <Route path="/partners" element={<Partners />} />
+            <Route path="/services/social-sphere" element={<SocialSphere />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

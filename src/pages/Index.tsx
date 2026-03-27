@@ -1,6 +1,6 @@
 import { useState } from "react"; // v2
 import emailjs from "@emailjs/browser";
-import { ArrowRight, Globe, Smartphone, Settings, Package, Shield, Sparkles, Lightbulb, Clock, Users, Mail, Linkedin, Twitter, Instagram, Send, Phone } from "lucide-react";
+import { ArrowRight, Globe, Smartphone, Settings, Package, Shield, Sparkles, Lightbulb, Clock, Users, Mail, Linkedin, Twitter, Instagram, Send, Phone, Megaphone } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -158,6 +158,12 @@ const Services = () => {
       description: "Innovative branded digital platforms designed to solve real-world problems and enhance productivity.",
       path: "/products"
     },
+    {
+      icon: Megaphone,
+      title: "The Social Sphere",
+      description: "AI-powered content creation & social media management to scale your digital presence effortlessly.",
+      path: "/services/social-sphere"
+    },
   ];
 
   return (
@@ -173,7 +179,7 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-7xl mx-auto">
           {services.map((service, index) => (
             <Card
               key={index}
