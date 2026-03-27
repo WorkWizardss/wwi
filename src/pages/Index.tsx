@@ -158,6 +158,12 @@ const Services = () => {
       description: "Innovative branded digital platforms designed to solve real-world problems and enhance productivity.",
       path: "/products"
     },
+    {
+      icon: Megaphone,
+      title: "The Social Sphere",
+      description: "AI-powered content creation & social media management to scale your digital presence effortlessly.",
+      path: "/services/social-sphere"
+    },
   ];
 
   return (
